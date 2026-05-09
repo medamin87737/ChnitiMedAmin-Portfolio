@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "outputDirectory": "dist",
   "routes": [
+    { "src": "/", "dest": "/portfolio_build.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
