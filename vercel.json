@@ -1,15 +1,3 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "portfolio_build.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/portfolio_build.html"
-    }
-  ]
+  "rewrites": [{ "source": "/", "destination": "/portfolio_build.html" }]
 }
