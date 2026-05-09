@@ -4,9 +4,33 @@
     {
       "src": "portfolio_build.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "public/(.*)",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "photo.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/(.*)",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/photo.png",
+      "dest": "/photo.png"
+    },
+    {
+      "src": "/dist/(.*)",
+      "dest": "/dist/$1"
+    },
     {
       "src": "/",
       "dest": "/portfolio_build.html"
