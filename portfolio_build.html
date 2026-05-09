@@ -249,17 +249,6 @@ nav {
 }
 .a11y-hub-grid button:hover { border-color:var(--accent); color:var(--accent); }
 .a11y-hub-grid button.active { background:rgba(0,212,255,0.14); border-color:var(--accent); color:var(--accent); }
-.a11y-hub-grid button i {
-  font-size:1rem;
-  transition:transform 0.2s ease, filter 0.2s ease;
-}
-.a11y-hub-grid button:hover i {
-  transform:translateY(-1px) scale(1.08);
-  filter:drop-shadow(0 0 6px rgba(0,212,255,0.35));
-}
-.a11y-hub-grid button.active i {
-  transform:scale(1.12);
-}
 .a11y-hub-grid button .hub-tip {
   position:absolute; bottom:104%; left:50%; transform:translateX(-50%);
   background:var(--card2); border:1px solid var(--border); padding:4px 8px;
@@ -614,15 +603,15 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
     </div>
     <div class="a11y-hub-subtitle" data-fr="Réglages rapides" data-en="Quick settings">Réglages rapides</div>
     <div class="a11y-hub-grid">
-      <button type="button" onclick="toggleTheme(); syncHubActiveBtns();" id="hub-btn-theme"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i><span class="hub-tip" data-fr="Clair / sombre" data-en="Light / dark">Clair / sombre</span></button>
-      <button type="button" onclick="changeFontSize(1)" id="hub-font-plus"><i class="fa-solid fa-text-height" aria-hidden="true"></i><span class="hub-tip" data-fr="Texte +" data-en="Larger text">Texte +</span></button>
-      <button type="button" onclick="changeFontSize(-1)" id="hub-font-minus"><i class="fa-solid fa-minimize" aria-hidden="true"></i><span class="hub-tip" data-fr="Texte −" data-en="Smaller text">Texte −</span></button>
-      <button type="button" onclick="toggleContrast(); syncHubActiveBtns();" id="hub-btn-contrast"><i class="fa-solid fa-adjust" aria-hidden="true"></i><span class="hub-tip" data-fr="Contraste" data-en="Contrast">Contraste</span></button>
-      <button type="button" onclick="toggleReading(); syncHubActiveBtns();" id="hub-btn-reading"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i><span class="hub-tip" data-fr="Lecture" data-en="Reading">Lecture</span></button>
-      <button type="button" onclick="toggleDyslexia(); syncHubActiveBtns();" id="hub-btn-dyslexia"><i class="fa-solid fa-font" aria-hidden="true"></i><span class="hub-tip" data-fr="Police lisible" data-en="Readable font">Police lisible</span></button>
-      <button type="button" onclick="toggleReduceMotion(); syncHubActiveBtns();" id="hub-btn-motion"><i class="fa-solid fa-pause" aria-hidden="true"></i><span class="hub-tip" data-fr="Moins d’animations" data-en="Less motion">Moins d’animations</span></button>
-      <button type="button" onclick="focusMode(); syncHubActiveBtns();" id="hub-btn-focus"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span class="hub-tip" data-fr="Mode focus" data-en="Focus mode">Mode focus</span></button>
-      <button type="button" onclick="toggleCustomCursor(); syncHubActiveBtns();" id="hub-btn-cursor"><i class="fa-solid fa-arrow-pointer" aria-hidden="true"></i><span class="hub-tip" data-fr="Curseur" data-en="Cursor">Curseur</span></button>
+      <button type="button" onclick="toggleTheme(); syncHubActiveBtns();" id="hub-btn-theme">🌓<span class="hub-tip" data-fr="Clair / sombre" data-en="Light / dark">Clair / sombre</span></button>
+      <button type="button" onclick="changeFontSize(1)" id="hub-font-plus">A+<span class="hub-tip" data-fr="Texte +" data-en="Larger text">Texte +</span></button>
+      <button type="button" onclick="changeFontSize(-1)" id="hub-font-minus">A−<span class="hub-tip" data-fr="Texte −" data-en="Smaller text">Texte −</span></button>
+      <button type="button" onclick="toggleContrast(); syncHubActiveBtns();" id="hub-btn-contrast">◑<span class="hub-tip" data-fr="Contraste" data-en="Contrast">Contraste</span></button>
+      <button type="button" onclick="toggleReading(); syncHubActiveBtns();" id="hub-btn-reading">📖<span class="hub-tip" data-fr="Lecture" data-en="Reading">Lecture</span></button>
+      <button type="button" onclick="toggleDyslexia(); syncHubActiveBtns();" id="hub-btn-dyslexia">Aa<span class="hub-tip" data-fr="Police lisible" data-en="Readable font">Police lisible</span></button>
+      <button type="button" onclick="toggleReduceMotion(); syncHubActiveBtns();" id="hub-btn-motion">⏸<span class="hub-tip" data-fr="Moins d’animations" data-en="Less motion">Moins d’animations</span></button>
+      <button type="button" onclick="focusMode(); syncHubActiveBtns();" id="hub-btn-focus">🔍<span class="hub-tip" data-fr="Mode focus" data-en="Focus mode">Mode focus</span></button>
+      <button type="button" onclick="toggleCustomCursor(); syncHubActiveBtns();" id="hub-btn-cursor">◎<span class="hub-tip" data-fr="Curseur" data-en="Cursor">Curseur</span></button>
     </div>
     <div class="a11y-hub-subtitle" data-fr="Options avancées" data-en="Advanced">Options avancées</div>
     <div class="a11y-switch-row"><span data-fr="Souligner les liens" data-en="Underline links">Souligner les liens</span><button type="button" class="switch" id="sw-underline" onclick="toggleHtmlFlag('data-underline-links','sw-underline')" aria-pressed="false"></button></div>
