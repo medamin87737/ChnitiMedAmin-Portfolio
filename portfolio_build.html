@@ -632,7 +632,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
   <div class="nav-logo">CMA<em>.</em>dev</div>
     <button type="button" id="nav-amin-trigger" class="amin-nav-trigger" onclick="toggleAgent()" aria-label="AminMind — assistant intelligent">
       <span class="amin-nav-logo-wrap">
-        <img id="navAminPhoto" src="photo.png" alt="" width="40" height="40" decoding="async"/>
+        <img id="navAminPhoto" src="/photo.png" alt="" width="40" height="40" decoding="async" onerror="this.onerror=null;this.src='/public/photo.png';"/>
         <span class="amin-ai-badge" aria-hidden="true">AI</span>
       </span>
       <span class="amin-nav-label">AminMind</span>
@@ -718,7 +718,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
         </div>
         <div class="photo-frame">
           <div class="photo-inner">
-            <img id="profilePhoto" src="" alt="Chniti Med Amin"/>
+            <img id="profilePhoto" src="/photo.png" alt="Chniti Med Amin" onerror="this.onerror=null;this.src='/public/photo.png';"/>
           </div>
         </div>
         <div class="photo-scanlines"></div>
@@ -954,7 +954,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 <div id="agent-panel">
   <div class="agent-header">
     <div class="agent-avatar-wrap" aria-hidden="true">
-      <img id="agentPanelPhoto" src="photo.png" alt="" width="40" height="40" decoding="async"/>
+      <img id="agentPanelPhoto" src="/photo.png" alt="" width="40" height="40" decoding="async" onerror="this.onerror=null;this.src='/public/photo.png';"/>
       <span class="agent-ai-chip">AI</span>
     </div>
     <div>
@@ -977,7 +977,20 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 
 <script>
 // ========== PHOTO ==========
-document.getElementById('profilePhoto').src = 'photo.png';
+(function ensureProfilePhoto() {
+  var p = document.getElementById('profilePhoto');
+  if (!p) return;
+  var candidates = ['/photo.png', '/public/photo.png', 'photo.png'];
+  var i = 0;
+  function tryNext() {
+    if (i >= candidates.length) return;
+    p.src = candidates[i++];
+  }
+  p.onerror = function () {
+    tryNext();
+  };
+  tryNext();
+})();
 
 // ========== TECH ORBIT ICONS ==========
 var TECH_LOGOS = [
