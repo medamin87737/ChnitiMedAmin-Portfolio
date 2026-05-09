@@ -1,15 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "portfolio_build.html",
-      "use": "@vercel/static"
-    }
-  ],
+  "outputDirectory": "dist",
   "routes": [
-    {
-      "src": "/",
-      "dest": "/portfolio_build.html"
-    }
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
